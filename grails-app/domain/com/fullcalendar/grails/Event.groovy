@@ -2,21 +2,24 @@ package com.fullcalendar.grails
 
 class Event implements Comparable{
 
-    String title
+    String summary
     Date startDate
     Date endDate
     Boolean allDay=Boolean.FALSE
-    String summary
+    String location
+    String description
+
     Calendar calendar
 
     static belongsTo = [calendar:Calendar]
 
     static constraints = {
-        title()
+        summary()
         startDate(attributes:[precision:"minute"])
         endDate(attributes:[precision:"minute"])
         allDay()
-        summary(maxSize:9092)
+        location()
+        description(maxSize:9092)
     }
 
     public int compareTo(Object that){
@@ -24,6 +27,6 @@ class Event implements Comparable{
     }
 
     public String toString(){
-        title
+        summary
     }
 }

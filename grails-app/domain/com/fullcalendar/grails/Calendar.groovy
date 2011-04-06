@@ -4,7 +4,7 @@ class Calendar {
 
     String name
     String color
-    String fontColor
+    String textColor
     SortedSet events
 
     static hasMany = [events:Event]
@@ -12,7 +12,7 @@ class Calendar {
     static constraints = {
         name()
         color()
-        fontColor()
+        textColor()
     }
 
     public String toString(){
