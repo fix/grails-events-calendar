@@ -1,0 +1,17 @@
+INTRODUCTION
+------------
+
+This plugin helps to develop applications with calendar capabilities.
+
+INSTALLATION
+------------
+
+   grails install-plugin events-calendar
+
+It depends on jquery, jquery-ui, and full-calendar plugin
+
+QUICKSTART
+----------
+
+Two Domain classes are created 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
+http://myserver:port/events-calendar/calendar for a list of calendars
