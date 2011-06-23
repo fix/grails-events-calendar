@@ -14,4 +14,9 @@ QUICKSTART
 ----------
 
 Two Domain classes are created 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
-http://myserver:port/events-calendar/calendar for a list of calendars
+http://myserver:port/events-calendar/calendar (most probably http://localhost:8080/events-calendar/calendar for a list of calendars
+
+You can of course create calendars and then create events by dragging/clicking on the calendar display. So far modifying events by dragging does not work yet
+
+
+Enjoy!
