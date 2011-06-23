@@ -35,13 +35,13 @@
   javascript:window.location="${createLink(controller:'event',action:'create', params:['calendar.id':calendarInstance.id])}&allDay="+allDay+"&startDate_year="+start.getFullYear()+"&startDate_month="+(start.getMonth()+1)+"&startDate_day="+start.getDate()+"&startDate_hour="+start.getHours()+"&startDate_minute="+start.getMinutes()+"&endDate_year="+end.getFullYear()+"&endDate_month="+(end.getMonth()+1)+"&endDate_day="+end.getDate()+"&endDate_hour="+end.getHours()+"&endDate_minute="+end.getMinutes()
   },
   editable: true,
-	loading: function(bool) {
-				if (bool) $('#loading').show();
-				else {
-				$('#loading').hide();
-				$('#calendar').fullCalendar( 'rerenderEvents' );
-				}
-			},
+  loading: function(bool) {
+	if (bool) $('#loading').show();
+	else {
+		$('#loading').hide();
+		$('#cal').fullCalendar( 'rerenderEvents' );
+	}
+  },
   events:'${createLink(controller:"calendar", action:"json", id:calendarInstance.id)}'
 </fullcal:calendar>
 

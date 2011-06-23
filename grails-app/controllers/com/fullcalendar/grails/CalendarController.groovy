@@ -40,6 +40,7 @@ class CalendarController {
 			json+="\"end\":\""+it.endDate+"\","
 			json+="\"allDay\":"+it.allDay+","
 			json+="\"url\":\"../../event/show/"+it.id+"\","
+			json+="\"textColor\": \""+cal.textColor+"\","
 			json+="\"backgroundColor\": \""+cal.color+"\""
 			json+="}"
 		}
