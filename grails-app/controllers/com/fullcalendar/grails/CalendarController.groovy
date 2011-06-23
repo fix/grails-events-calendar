@@ -1,38 +1,51 @@
 package com.fullcalendar.grails
 
+import java.util.Date;
+
 class CalendarController {
 
     def scaffold = true
 
     def json={
-        render createJSON(Long.parseLong(params.id))
-    }
-
-    private String createJSON(long id){
-        def json="["
-        boolean first=true
-        Calendar c=Calendar.get(id)
-        c.events.each{
-            if(first){
-                first=false
-                json+="{"
-            }
-            else {
-                json+=",{"
-            }
-
-            json+="title:\""+it.summary+"\","
-            json+="start:'"+it.startDate+"',"
-            json+="end:'"+it.endDate+"',"
-            json+="allDay:"+it.allDay+","
-            json+="url:\"${request.contextPath}/event/show/"+it.id+"\","
-            json+="backgroundColor:'"+c.color+"',"
-            json+="textColor:'"+c.textColor+"'"
-            json+="}"
-        }
-        json+="]"
-        return json
-    }
+		if(!params.start){
+			params.start=(long)((System.currentTimeMillis()-13600000*24*30)/1000)
+		}
+		if(!params.end){
+			params.end=(long)((System.currentTimeMillis()+13600000*24*30)/1000)
+		}
+		render(text:createJSON(new Date(Long.parseLong(params.start+"000")),new Date(Long.parseLong(params.end+"000")), Calendar.get(params.id)),contentType:"text/html")
+	}
+	
+	private String createJSON(Date start, Date end, Calendar cal){
+		def json="["
+		boolean first=true
+		def c = Event.createCriteria()
+		def results=c.list([order:'desc', sort:'startDate']){
+			and{
+				eq('calendar',cal)
+				between('startDate', start, end)
+			}
+		}
+		results.each{
+			if(first){
+				first=false
+				json+="{"
+			}
+			else {
+				json+=",{"
+			}
+			json+="\"id\":"+it.id+","
+			json+="\"title\":\""+it.summary.replaceAll("\"","'")+"\","
+			json+="\"start\":\""+it.startDate+"\","
+			json+="\"end\":\""+it.endDate+"\","
+			json+="\"allDay\":"+it.allDay+","
+			json+="\"url\":\"../../event/show/"+it.id+"\","
+			json+="\"backgroundColor\": \""+cal.color+"\""
+			json+="}"
+		}
+		json+="]"
+		return json
+	}
 
 
     def ical={
