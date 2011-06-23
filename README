@@ -1,22 +1,31 @@
-INTRODUCTION
-------------
+1. INTRODUCTION
+---------------
+This plugin helps to develop applications with calendar capabilities. This includes:
+- creation of calendars with customised colors
+- creation of events dragging on the calendar (in the month, week and day views)
+- basic ical export
+- json export
 
-This plugin helps to develop applications with calendar capabilities.
-
-INSTALLATION
-------------
-
+2. INSTALLATION
+---------------
    grails install-plugin events-calendar
 
 It depends on jquery, jquery-ui, and full-calendar plugin
 
-QUICKSTART
-----------
-
-Two Domain classes are created 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
-http://myserver:port/events-calendar/calendar (most probably http://localhost:8080/events-calendar/calendar ) for a list of calendars
+3. QUICKSTART
+-------------
+Two Domain classes are created: 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
+http://myserver:port/events-calendar/calendar (most likely http://localhost:8080/events-calendar/calendar will work) for a list of calendars
 
 You can of course create calendars and then create events by dragging/clicking on the calendar display. So far modifying events by dragging does not work yet
+
+if you want to connect (in read only mode) to your favorite calendar using ical standard, use the following link:
+http://myserver:port/events-calendar/calendar/ical/${your_calendar_id}
+
+for json connection, use the following link:
+http://myserver:port/events-calendar/calendar/json/${your_calendar_id}?start="number of seconds from 01-01-1970"&end="number of seconds from 01-01-1970"
+You'll get the events between "start" and "end" dates in json format following the fullcalendar schema: http://arshaw.com/fullcalendar/docs/event_data/Event_Object/
+Usually the java System.CurrentTimeMillis()/1000 provides a good start as for "start" and "end" values
 
 
 Enjoy!
