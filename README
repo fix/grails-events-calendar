@@ -10,7 +10,7 @@ This plugin helps to develop applications with calendar capabilities. This inclu
 ---------------
    grails install-plugin events-calendar
 
-It depends on jquery, jquery-ui, and full-calendar plugin
+It depends on jquery, jquery-ui, and full-calendar plugins
 
 3. QUICKSTART
 -------------

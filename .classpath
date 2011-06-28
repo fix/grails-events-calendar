@@ -52,17 +52,17 @@
 			<attribute name="com.springsource.sts.grails.core.SOURCE_FOLDER" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path=".link_to_grails_plugins/jquery-ui-1.8.10/grails-app/taglib">
+	<classpathentry kind="src" path=".link_to_grails_plugins/jquery-ui-1.8.7/grails-app/taglib">
 		<attributes>
 			<attribute name="com.springsource.sts.grails.core.SOURCE_FOLDER" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path=".link_to_grails_plugins/jquery-ui-1.8.10/grails-app/i18n">
+	<classpathentry kind="src" path=".link_to_grails_plugins/jquery-ui-1.8.7/grails-app/i18n">
 		<attributes>
 			<attribute name="com.springsource.sts.grails.core.SOURCE_FOLDER" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="BuildConfig.groovy|*DataSource.groovy|UrlMappings.groovy|Config.groovy|BootStrap.groovy|spring/resources.groovy" kind="src" path=".link_to_grails_plugins/jquery-ui-1.8.10/grails-app/conf">
+	<classpathentry excluding="*DataSource.groovy|BootStrap.groovy|BuildConfig.groovy|Config.groovy|UrlMappings.groovy|spring/resources.groovy" kind="src" path=".link_to_grails_plugins/jquery-ui-1.8.7/grails-app/conf">
 		<attributes>
 			<attribute name="com.springsource.sts.grails.core.SOURCE_FOLDER" value="true"/>
 		</attributes>
