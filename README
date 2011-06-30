@@ -3,6 +3,7 @@
 This plugin helps to develop applications with calendar capabilities. This includes:
 - creation of calendars with customised colors
 - creation of events dragging on the calendar (in the month, week and day views)
+- update the event when resized or drag&droped on the calendar view
 - basic ical export
 - json export
 
@@ -17,7 +18,7 @@ It depends on jquery, jquery-ui, and full-calendar plugins
 Two Domain classes are created: 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
 http://myserver:port/events-calendar/calendar (most likely http://localhost:8080/events-calendar/calendar will work) for a list of calendars
 
-You can of course create calendars and then create events by dragging/clicking on the calendar display. So far modifying events by dragging does not work yet
+You can of course create calendars and then create events by dragging/clicking on the calendar display. So far modifying events by dragging is experimental
 
 If you want to connect (in read only mode) to your favorite calendar using ical standard, use the following link:
 http://myserver:port/events-calendar/calendar/ical/${your_calendar_id}
@@ -47,3 +48,4 @@ Event, Comparable using 'startDate':
 - location
 - description (max 9092 chars)
 - belongsTo Calendar
+
