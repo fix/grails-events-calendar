@@ -5,6 +5,7 @@ import java.util.Date;
 class CalendarController {
 
     def scaffold = true
+	
 
     def json={
 		if(!params.start){

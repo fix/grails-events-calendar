@@ -35,6 +35,12 @@
   javascript:window.location="${createLink(controller:'event',action:'create', params:['calendar.id':calendarInstance.id])}&allDay="+allDay+"&startDate_year="+start.getFullYear()+"&startDate_month="+(start.getMonth()+1)+"&startDate_day="+start.getDate()+"&startDate_hour="+start.getHours()+"&startDate_minute="+start.getMinutes()+"&endDate_year="+end.getFullYear()+"&endDate_month="+(end.getMonth()+1)+"&endDate_day="+end.getDate()+"&endDate_hour="+end.getHours()+"&endDate_minute="+end.getMinutes()
   },
   editable: true,
+  eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+       jQuery.ajax({type:'POST',data:{'dayDelta': dayDelta,'minuteDelta': minuteDelta}, url:'${createLink(controller:'event', action:'updateEndDate')}'+'/'+event.id,success:function(data,textStatus){},error:function(XMLHttpRequest,textStatus,errorThrown){revertFunc()}});
+  },
+  eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
+  	jQuery.ajax({type:'POST',data:{'allDay': allDay, 'dayDelta': dayDelta,'minuteDelta': minuteDelta}, url:'${createLink(controller:'event', action:'updateMoveDate')}'+'/'+event.id,success:function(data,textStatus){},error:function(XMLHttpRequest,textStatus,errorThrown){revertFunc()}}); 
+  },
   loading: function(bool) {
 	if (bool) $('#loading').show();
 	else {
