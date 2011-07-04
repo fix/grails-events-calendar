@@ -23,10 +23,11 @@ You can of course create calendars and then create events by dragging/clicking o
 If you want to connect (in read only mode) to your favorite calendar using ical standard, use the following link:
 http://myserver:port/events-calendar/calendar/ical/${your_calendar_id}
 
-For json connection, use the following link:
-http://myserver:port/events-calendar/calendar/json/${your_calendar_id}?start=<number of seconds from 01-01-1970>&end=<number of seconds from 01-01-1970>
-You'll get the events between "start" and "end" dates in json format following the fullcalendar schema: http://arshaw.com/fullcalendar/docs/event_data/Event_Object/
-Usually the java System.CurrentTimeMillis()/1000 provides a good start as for "start" and "end" values
+For json connection (like a basic REST get for events) , use the following link:
+http://myserver:port/events-calendar/calendar/json/${your_calendar_id}?start= <number of seconds from 01-01-1970>&end=<number of seconds from 01-01-1970>
+You'll get the events between "start" and "end" dates in json format following the fullcalendar schema: http://arshaw.com/fullcalendar/docs/event_data/Event_Object/ .
+If no end or/and start are provided it returns by default the events between roughly 30 days before and 30 days after the date of the request.
+Usually "new java.util.Date().getTime()/1000" provides a good start as for "start" and "end" values
 
 
 Enjoy!
