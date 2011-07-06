@@ -32,6 +32,14 @@ Usually "new java.util.Date().getTime()/1000" provides a good start as for "star
 
 Enjoy!
 
+Follow the project
+------------------
+Follow the progress of the project:
+https://www.pivotaltracker.com/projects/318887
+
+Fork the project:
+https://github.com/martindow/grails-events-calendar
+
 
 Details of the Domain Classes
 -----------------------------
