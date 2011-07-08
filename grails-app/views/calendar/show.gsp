@@ -18,8 +18,9 @@
 	});
 	</script>
 <div id='loading' style='position:absolute; top: 8px; left: 200px; display:none'>Loading...</div> 
-  
-  <h1>${calendarInstance.name} </h1><button class="ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all" id="edit"><span class="ui-button-text"><g:message code="default.button.edit.label" default="Edit"/></span></button>
+
+<p>${calendarInstance.name} <button class="ui-button-text-only ui-corner-all" id="edit"><span class="ui-button-text"><g:message code="default.button.edit.label" default="Edit"/></span></button><button class="ui-button-text-only ui-corner-all" id="edit"><span class="ui-button-text"><g:message code="default.button.kist.label" default="List"/></span></button> </p>
+ 
 <fullcal:calendar id="cal">
   theme: true,
   header: {
@@ -48,8 +49,8 @@
 		$('#cal').fullCalendar( 'rerenderEvents' );
 	}
   },
-  events:'${createLink(controller:"calendar", action:"json", id:calendarInstance.id)}'
+  events:'${createLink(controller:"calendar", action:"json", id:calendarInstance.id)}',
+  aspectRatio:2.3
 </fullcal:calendar>
-
 </body>
 </html>
