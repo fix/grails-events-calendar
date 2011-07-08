@@ -4,7 +4,7 @@ class EventsCalendarGrailsPlugin {
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.1 > *"
     // the other plugins this plugin depends on
-    def dependsOn = [ 'full-calendar': '1.5.0.1']
+    def dependsOn = [ 'fullCalendar': '1.5.0.1']
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/error.gsp",
@@ -24,7 +24,7 @@ Brief description of the plugin.
     def documentation = "http://grails.org/plugin/events-calendar"
 
     def doWithWebDescriptor = { xml ->
-        // TODO Implement additions to web.xml (optional), this event occurs before 
+        // TODO Implement additions to web.xml (optional), this event occurs before
     }
 
     def doWithSpring = {
@@ -50,3 +50,4 @@ Brief description of the plugin.
         // The event is the same as for 'onChange'.
     }
 }
+
