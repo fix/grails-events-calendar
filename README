@@ -1,5 +1,4 @@
-1. INTRODUCTION
----------------
+# INTRODUCTION
 This plugin helps to develop applications with calendar capabilities. This includes:
 - creation of calendars with customised colors
 - creation of events dragging on the calendar (in the month, week and day views)
@@ -7,14 +6,12 @@ This plugin helps to develop applications with calendar capabilities. This inclu
 - basic ical export
 - json export
 
-2. INSTALLATION
----------------
-   grails install-plugin events-calendar
+# INSTALLATION
+   		grails install-plugin events-calendar
 
 It depends on jquery, jquery-ui, and full-calendar plugins
 
-3. QUICKSTART
--------------
+# QUICKSTART
 Two Domain classes are created: 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
 http://myserver:port/events-calendar/calendar (most likely http://localhost:8080/events-calendar/calendar will work) for a list of calendars
 
@@ -32,8 +29,7 @@ Usually "new java.util.Date().getTime()/1000" provides a good start as for "star
 
 Enjoy!
 
-Follow the project
-------------------
+# Follow the project
 Follow the progress of the project:
 https://www.pivotaltracker.com/projects/318887
 
@@ -41,8 +37,7 @@ Fork the project:
 https://github.com/martindow/grails-events-calendar
 
 
-Details of the Domain Classes
------------------------------
+# Details of the Domain Classes
 Calendar:
 - name
 - color (examples: white, black, red, #ff65a9)
