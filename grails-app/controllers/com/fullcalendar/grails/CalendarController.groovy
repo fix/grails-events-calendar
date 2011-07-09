@@ -54,11 +54,12 @@ class CalendarController {
 	private String createIcal(long id){
 		def df=new java.text.SimpleDateFormat("yyyyMMdd'T'HHmmss")
 		Calendar c=Calendar.get(id)
-		def ical='''BEGIN:VCALENDAR
-	X-WR-CALNAME:'''+c.name+'''
-	X-WR-CALDESC:GRAILS Plugin Calendar
-	PRODID:-//Francois-Xavier Thoorens/NONSGML Bennu 0.1//EN
-	VERSION:2.0
+		def ical='''
+BEGIN:VCALENDAR
+X-WR-CALNAME:'''+c.name+'''
+X-WR-CALDESC:GRAILS Plugin Calendar
+PRODID:-//Francois-Xavier Thoorens/NONSGML Bennu 0.1//EN
+VERSION:2.0
 	'''
 		c.events.each{
 			ical+="BEGIN:VEVENT\n"
