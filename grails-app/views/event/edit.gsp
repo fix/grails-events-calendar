@@ -7,6 +7,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'event.label', default: 'Event')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <jq:resources/>
         <jqui:resources/>
     </head>
     <body>
