@@ -15,11 +15,14 @@
   <script>
 	$(function() {
 		$("#edit").click(function() { window.location="${createLink(controller:'calendar',action:'edit', id:calendarInstance.id)}"; });
+		$("#list").click(function() { window.location="${createLink(controller:'calendar',action:'list', id:calendarInstance.id)}"; });
+		$("#ical").click(function() { window.location="${createLink(controller:'calendar',action:'ical', id:calendarInstance.id)}"; });
+		$("#json").click(function() { window.location="${createLink(controller:'calendar',action:'json', id:calendarInstance.id)}"; });
 	});
 	</script>
-<div id='loading' style='position:absolute; top: 8px; left: 200px; display:none'>Loading...</div> 
+<div id='loading' style='position:absolute; top: 8px; left: 300px; display:none'>Loading...</div> 
 
-<p>${calendarInstance.name} <button class="ui-button-text-only ui-corner-all" id="edit"><span class="ui-button-text"><g:message code="default.button.edit.label" default="Edit"/></span></button><button class="ui-button-text-only ui-corner-all" id="edit"><span class="ui-button-text"><g:message code="default.button.kist.label" default="List"/></span></button> </p>
+<p>${calendarInstance.name} <button class="ui-button-text-only ui-corner-all" id="edit"><span class="ui-button-text"><g:message code="default.button.edit.label" default="Edit"/></span></button><button class="ui-button-text-only ui-corner-all" id="list"><span class="ui-button-text"><g:message code="default.button.list.label" default="List"/></span></button><button class="ui-button-text-only ui-corner-all" id="ical"><span class="ui-button-text"><g:message code="default.button.ical.label" default="ICal"/></span></button><button class="ui-button-text-only ui-corner-all" id="json"><span class="ui-button-text"><g:message code="default.button.json.label" default="Json"/></span></button> </p>
  
 <fullcal:calendar id="cal">
   theme: true,
