@@ -13,15 +13,15 @@ It depends on jquery, jquery-ui, and full-calendar plugins
 
 # QUICKSTART
 Two Domain classes are created: 'Calendar' and 'Event'. Once the plugin installed and the server fired up go to url:
-http://myserver:port/events-calendar/calendar (most likely http://localhost:8080/events-calendar/calendar will work) for a list of calendars
+http://myserver:port/myapp/calendar (most likely http://localhost:8080/myapp/calendar will work) for a list of calendars
 
 You can of course create calendars and then create events by dragging/clicking on the calendar display. So far modifying events by dragging is experimental
 
 If you want to connect (in read only mode) to your favorite calendar using ical standard, use the following link:
-http://myserver:port/events-calendar/calendar/ical/${your_calendar_id}
+http://myserver:port/myapp/calendar/ical/${your_calendar_id}
 
 For json connection (like a basic REST get for events) , use the following link:
-http://myserver:port/events-calendar/calendar/json/${your_calendar_id}?start= <number of seconds from 01-01-1970>&end=<number of seconds from 01-01-1970>
+http://myserver:port/myapp/calendar/json/${your_calendar_id}?start= <number of seconds from 01-01-1970>&end=<number of seconds from 01-01-1970>
 You'll get the events between "start" and "end" dates in json format following the fullcalendar schema: http://arshaw.com/fullcalendar/docs/event_data/Event_Object/ .
 If no end or/and start are provided it returns by default the events between roughly 30 days before and 30 days after the date of the request.
 Usually "new java.util.Date().getTime()/1000" provides a good start as for "start" and "end" values
